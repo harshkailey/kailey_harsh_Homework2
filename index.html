@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marvel Character Build</title>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- This is where we add code for our website -->
+    <header>
+        <h1 class="hidden">All About The Team</h1>
+        <img src="images/logo.svg" alt="Marvel Logo" id="main-logo">
+    </header>
+    
+    <main>
+        <nav id="character-nav">
+            <ul>
+                <li>
+                    <a href="#lightbox" onclick="openLightbox('cap')">
+                        <div class="sprite" id="cap"></div>
+                        <h2>Captain America</h2>
+                    </a>
+                </li>                
+                <li>
+                    <a href="#lightbox" onclick="openLightbox('carol')">
+                        <div class="sprite" id="carol"></div>
+                        <h2>Captain Marvel</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#lightbox" onclick="openLightbox('clint')">
+                        <div class="sprite" id="clint"></div>
+                        <h2>Hawkeye</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#lightbox" onclick="openLightbox('hulk')">
+                        <div class="sprite" id="hulk"></div>
+                        <h2>Hulk</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#lightbox" onclick="openLightbox('thor')">
+                        <div class="sprite" id="thor"></div>
+                        <h2>Thor</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#lightbox" onclick="openLightbox('widow')">
+                        <div class="sprite" id="widow"></div>
+                        <h2>Black Widow</h2>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <section id="instructions">
+            <h3>Choose your hero!</h3>
+            <p>Use your mouse to hover / Click to discover more about each Marvel hero.</p>
+        </section>
+    </main>
+    
+    <!-- Lightbox overlay structure -->
+    <div id="lightbox" class="hidden">
+        <div id="lightbox-content">
+            <span id="close-btn" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-img" src="" alt="Character Image">
+            <h2 id="lightbox-title"></h2>
+            <!-- Additional Hero Information -->
+            <div id="hero-info">
+                <p><strong>Original Name:</strong> <span id="hero-name"></span></p>
+                <p><strong>Age:</strong> <span id="hero-age"></span></p>
+                <p><strong>From:</strong> <span id="hero-location"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="sticky-footer">
+        <h3>All images &copy; Marvel</h3>
+    </footer>
+
+    <!-- Link to the JavaScript file for lightbox functionality -->
+    <script src="js/lightbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+.hidden {
+    display: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(41, 209, 97);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: red;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#main-logo {
+    width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Container for vertically aligning character images */
+#character-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+#character-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Space between each image */
+}
+
+#character-nav ul li {
+    background-color: transparent;
+    text-align: center;
+}
+
+#character-nav ul li h2 {
+    color: white;
+    margin-top: 10px;
+}
+
+#character-nav ul li a {
+    text-decoration: none;
+}
+
+/* Sprite image styling */
+.sprite {
+    width: 150px;
+    height: 150px;
+    background-image: url(../images/marvelSprites.jpg);
+    transition: transform 0.3s ease; /* Smooth transition for scale effect */
+}
+
+/* Sprite positions for each character */
+#carol {
+    background-position: -150px 0;
+}
+
+#clint {
+    background-position: -300px 0;
+}
+
+#hulk {
+    background-position: -450px 0;
+}
+
+#thor {
+    background-position: -600px 0;
+}
+
+#widow {
+    background-position: -750px 0;
+}
+
+/* Rotate animation keyframes */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Apply rotation on hover for each character */
+#cap:hover,
+#carol:hover,
+#clint:hover,
+#hulk:hover,
+#thor:hover,
+#widow:hover {
+    animation: rotate 2s linear infinite !important;
+    animation-direction: alternate;
+    transform-origin: center; /* Ensures rotation happens from the center */
+}
+
+/* Scale-up effect for other character thumbnails on hover */
+#character-nav ul li:hover .sprite {
+    transform: scale(1.1);
+}
+
+/* Lightbox styling */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease; /* Fade-in transition */
+}
+
+#lightbox.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#lightbox-content {
+    position: relative;
+    max-width: 600px;
+    max-height: 90%;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Slide-in effect for lightbox content */
+@keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+#lightbox img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#close-btn:hover {
+    color: red;
+}
+
+#instructions {
+    background-color: black; /* Set background to black */
+    color: white; /* Set text color to white for contrast */
+    padding: 20px;
+    text-align: center;
+}
+
+#instructions h3 {
+    font-size: 32px;
+    margin-bottom: 14px;
+    color: white;
+}
+
+#instructions p {
+    color: white;
+}
+
+footer {
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Hero information styling */
+#hero-info {
+    text-align: left;
+    margin-top: 10px;
+    color: #333; /* Dark text for readability */
+}
+
+#hero-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
